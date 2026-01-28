@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<style>
+		body {
+			margin: 0;
+			overflow: hidden;
+		}
+
+		.videoContainer {
+			display: block;
+			position: absolute;
+			width: 1920px;
+			height: 1080px;
+		}
+
+		#overlayImg {
+			position: absolute;
+			transition: opacity 0.5s ease-in-out;
+			z-index: 2;
+		}
+
+		#videoPlayerStinger {
+			position: absolute;
+			z-index: 2;
+		}
+
+		#videoPlayerTop {
+			position: absolute;
+			z-index: 1;
+		}
+
+		#videoPlayerBottom {
+			position: absolute;
+		}
+
+		.hidden {
+			opacity: 0;
+		}
+
+		.nodisplay {
+			display: none;
+		}
+	</style>
+	<script type="module" src="./highlights.js"></script>
+</head>
+
+<body>
+	<div class="videoContainer">
+		<video preload="true" class="hidden" id="videoPlayerStinger"></video>
+		<video preload="true" class="hidden" id="videoPlayerTop"></video>
+		<video preload="true" id="videoPlayerBottom"></video>
+	</div>
+</body>
+
+</html>

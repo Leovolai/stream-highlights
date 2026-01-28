@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/eb5ec490d3.js" crossorigin="anonymous"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=PT+Sans+Narrow:wght@400;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+		rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="settingsBar">
+		<button id="startButton" class="button">
+			<i class="fa-solid fa-play"></i>
+			<span>Aloita toisto</span>
+		</button>
+		<button id="moveButton" class="button">
+			<i class="fa-solid fa-folder"></i>
+			<span>Siirrä Videot</span>
+			<button id="toggleSettings" class="button">
+				<i class="fa-solid fa-gear"></i>
+				<span>Asetukset</span></button>
+		</button>
+
+		<paper-button class="button" nodecg-dialog="ohje">?</paper-button>
+	</div>
+	<div id="settings" class="hidden">
+		<h1>OBS Tallenteiden Polku</h1>
+		<input type="text" id="replayBufferPath" placeholder="Path to OBS Recordings">
+		<button class="button" id="setFolder">Aseta</button>
+
+
+		<h1>Uusintojen etuliite</h1>
+		<input type="text" id="replayPrefix" placeholder="Replay Prefix">
+		<button class="button" id="setPrefix">Aseta</button>
+
+		<h1>Videoiden enimmäismäärä</h1>
+		<input type="number" id="maxReplayCountEl" min="0">
+		<button class="button" id="setReplayCountBtn">Aseta</button>
+
+
+	</div>
+
+	<div class="videoFilesHeader">
+		<span>Videot:</span>
+		<span id="timeTotal">00:00</span>
+	</div>
+	<div id="videoFiles"></div>
+
+	<script type="module" src="./stream-highlights.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+{
+  "name": "stream-highlights",
+  "version": "0.0.0",
+  "description": "Plays videos from a folder in sequence with smooth crossfade transitions.",
+  "homepage": "",
+  "author": {
+    "name": "Leovolai"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.9.0",
+    "dashboardPanels": [
+      {
+        "name": "stream-highlights",
+        "title": "Stream Highlights",
+        "width": 4,
+        "file": "stream-highlights.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "ohje",
+        "title": "Ohje",
+        "width": 4,
+        "file": "ohje.html",
+        "headerColor": "#525F78",
+        "dialog": "true",
+        "dialogButtons": [
+          {
+            "name": "OK",
+            "type": "confirm"
+          }
+        ]
+      }
+    ],
+    "graphics": [
+      {
+        "file": "highlights.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ffprobe-static": "^3.1.0"
+  }
+}

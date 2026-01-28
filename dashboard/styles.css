@@ -1,0 +1,102 @@
+h1 {
+    font-family: 'Roboto';
+    margin: 10px 0 0 0;
+    font-size: 20px;
+}
+
+.settingsBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    font-family: 'Roboto Mono';
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #212121;
+    padding: 10px;
+    font-size: 12pt;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover,
+.button:hover {
+    background-color: #303030;
+}
+
+button:active,
+.button:active {
+    scale: 0.8;
+}
+
+.buttonActive {
+    background-color: #34559e;
+}
+
+select,
+input {
+    color: rgb(255, 255, 255);
+    border: none;
+    background-color: #3e4d6c;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 12pt;
+}
+
+#settings {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#replayBufferPath {
+    width: 80%;
+}
+
+.videoFilesHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#videoFiles {
+    list-style: none;
+    line-height: 2em;
+    font-family: monospace;
+    font-size: 15px;
+    margin-top: 10px;
+    min-height: 40px;
+    background-color: #262E3F;
+}
+
+#videoFiles li:nth-child(odd) {
+    padding: 5px 0px 5px 10px;
+    background-color: #262E3F;
+
+}
+
+#videoFiles li:nth-child(even) {
+    padding: 5px 0px 5px 10px;
+    background-color: #1f2533;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttonDisabled {
+    color: rgb(56, 56, 56);
+    background-color: gray;
+}
+
+.buttonDisabled:hover {
+    background-color: gray;
+}

@@ -10,16 +10,17 @@ h1 {
 }
 
 .button {
-    font-family: 'Roboto Mono';
+    font-family: 'Roboto';
     color: white;
     border: none;
-    text-transform: uppercase;
-    font-weight: bold;
     background-color: #212121;
     padding: 10px;
-    font-size: 12pt;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    font-weight: 500;
+    letter-spacing: .0892857143em;
+    text-indent: .0892857143em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    margin: 5px 0px;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }

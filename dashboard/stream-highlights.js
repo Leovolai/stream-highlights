@@ -69,7 +69,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const maxReplayCountEl = document.getElementById('maxReplayCountEl');
     const setReplayCountBtn = document.getElementById('setReplayCountBtn');
 
-
     // Initialize input with current replicant value
     maxReplayCount.on('change', (newVal) => {
         maxReplayCountEl.value = newVal;
@@ -88,7 +87,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
 
 const playButton = document.getElementById('startButton');
 playButton.addEventListener('click', function () {

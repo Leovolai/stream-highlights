@@ -59,7 +59,6 @@ module.exports = function (nodecg) {
 		});
 	}
 
-
 	let currentFolderPath = '';
 
 	replayBufferPath.on('change', (newPath) => {
@@ -95,7 +94,7 @@ module.exports = function (nodecg) {
 		}
 	});
 
-
+	// This part listens for moveVideos button press and moves the folderContents to a "saved_replays" folder
 	nodecg.listenFor('moveVideos', async function () {
 		const newFolderPath = path.join(replayBufferPath.value, 'saved_replays');
 

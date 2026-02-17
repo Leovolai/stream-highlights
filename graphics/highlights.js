@@ -26,7 +26,7 @@ folderContents.on('change', (newFolderContents = []) => {
     }
 });
 
-const transitionTime = 1;
+const transitionTime = 0.7;
 
 // Audio fade logic
 

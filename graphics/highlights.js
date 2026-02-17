@@ -1,5 +1,6 @@
 const folderContents = nodecg.Replicant('folderContents');
 
+const playerContainer = document.getElementById('playerContainer');
 const videoPlayerTop = document.getElementById('videoPlayerTop');
 const videoPlayerBottom = document.getElementById('videoPlayerBottom');
 const videoPlayerStinger = document.getElementById('videoPlayerStinger');
@@ -83,20 +84,6 @@ function resetVideo(video) {
     video.load();
 }
 
-// Stinger logic
-
-function playStinger() {
-    resetVideo(videoPlayerStinger);
-    videoPlayerStinger.src = stingerSrc;
-    videoPlayerStinger.classList.remove('hidden');
-    videoPlayerStinger.load();
-    videoPlayerStinger.play();
-
-    videoPlayerStinger.onended = () => {
-        videoPlayerStinger.classList.add('hidden');
-    };
-}
-
 // Core playback logic
 
 function playVideo() {
@@ -109,11 +96,7 @@ function playVideo() {
     }
 
     if (videoIndex >= videoList.length) {
-        playStinger();
-        setTimeout(() => {
-            videoPlayerTop.classList.add('hidden');
-            videoPlayerBottom.classList.add('hidden');
-        }, 1000);
+        playerContainer.classList.remove('active');
         nodecg.sendMessage('enableButton');
         return;
     }
@@ -124,8 +107,6 @@ function playVideo() {
     const active = isTop ? videoPlayerTop : videoPlayerBottom;
     const inactive = isTop ? videoPlayerBottom : videoPlayerTop;
 
-    playStinger();
-
     resetVideo(active);
 
     active.src = `http://localhost:9090/media/${encodeURIComponent(currentVideo)}`;
@@ -135,21 +116,26 @@ function playVideo() {
         audioFadeIn(active);
         active.play();
 
-        setTimeout(() => {
-            active.classList.remove('hidden');
-            inactive.classList.add('hidden');
-        }, 1000);
-    };
+        playerContainer.classList.add('active');
 
-    active.ontimeupdate = () => {
-        if (active.duration - active.currentTime <= transitionTime) {
-            active.ontimeupdate = null;
+        if (active === videoPlayerTop) {
+            videoPlayerTop.classList.remove('hidden');
+        } else {
+            videoPlayerTop.classList.add('hidden');
+        }
+
+        // Schedule transition precisely
+        const transitionDelay = (active.duration - transitionTime) * 1000;
+
+        setTimeout(() => {
             audioFadeOut(active);
             videoIndex++;
             playVideo();
-        }
+        }, transitionDelay);
     };
+
 }
+
 
 // Trigger
 nodecg.listenFor('playVideos', () => {
